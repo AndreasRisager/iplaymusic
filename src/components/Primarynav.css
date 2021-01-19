@@ -1,0 +1,7 @@
+.Primarynav ul {
+    display: flex;
+    justify-content: space-between;
+}
+.Primarynav ul li {
+    list-style: none;
+}

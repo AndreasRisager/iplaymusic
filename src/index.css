@@ -1,3 +1,23 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+body {
+  border-right: 1px solid rgba(0, 0, 0, 0.068);
+  border-left: 1px solid rgba(0, 0, 0, 0.068);
+  max-width: 375px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: unset;
 }

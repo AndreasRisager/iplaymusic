@@ -1,0 +1,8 @@
+.gradientHeading {
+    display: inline-block;
+    font-size: 3rem;
+    color: rgb(238,9,121);
+    background: linear-gradient(90deg, #EE0979 0%, #FF6A00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
