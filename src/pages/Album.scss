@@ -1,0 +1,39 @@
+.album {
+    &Header {
+        display: grid;
+        img {
+            grid-area: 1/1/1/1;
+        }
+        &__content {
+            grid-area: 1/1/1/1;
+            color: #FFF;
+            display: flex;
+            flex-direction: column;
+            &Text {
+                flex: 1;
+                padding: 2rem 2rem 4rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            h2 {
+                font-size: 3.6rem;
+                padding-bottom: 1rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            h4.genres {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+    .hashtag {
+        background-color: #FF1168;
+        padding: 1rem 1.5rem;
+        margin-right: 1em;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}

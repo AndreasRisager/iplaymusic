@@ -1,20 +1,20 @@
 // src/pages/Featured.js
-import "./Featured.css";
+import "./Featured.scss";
 import Primarynav from "../components/Primarynav";
 // import { Link } from "@reach/router";
+import Featuredcard from "../components/Featuredcard";
 
 export default function Featured() {
     return (
-        <main className="featured">
+        <>
             <Primarynav page="featured"/>
-            <h1 className="gradientHeading">Featured</h1>
-            <div className="featuredcards">
-                <div className="featuredcard">
-                    <img src="./images/featured/the-greatest-showman.jpg" alt="the greatest showman"/>
-                    <h2>The Greatest Showman</h2>
-                    <p>Soundtrack</p>
+            <main className="featured">
+                <h1 className="gradientHeading">Featured</h1>
+                <div className="featuredcards">
+                    <Featuredcard img="https://via.placeholder.com/325x425" heading="The Greatest Showman" label="Soundtrack"/>
+                    <Featuredcard img="https://via.placeholder.com/325x425" heading="The Greatest Showman" label="Soundtrack"/>
                 </div>
-            </div>
-        </main>
+            </main>
+        </>
     )
 }

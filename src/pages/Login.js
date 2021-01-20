@@ -1,5 +1,5 @@
 // src/pages/Login.js
-import "./Login.css";
+import "./Login.scss";
 import { Link } from "@reach/router";
 
 export default function Login() {
