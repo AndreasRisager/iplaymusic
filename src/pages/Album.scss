@@ -36,4 +36,12 @@
         font-size: 1.5rem;
         font-weight: 500;
     }
+    &__songs {
+        padding: 2rem;
+        &Header {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #341931;
+        }
+    }
 }
