@@ -10,7 +10,7 @@ export default function Album() {
         <>
         <main className="album">
             <header className="albumHeader">
-                <img src="./images/album/old-town-road.jpg" alt=""/>
+                <img src="./images/old-town-road.jpg" alt=""/>
                 <div className="albumHeader__content">
                     <Primarynav page="album" color="#FFF" search="false"/>
                     <div className="albumHeader__contentText">

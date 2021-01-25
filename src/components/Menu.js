@@ -6,19 +6,19 @@ export default function Menu() {
     return (
         <nav className="Menu">
             <Link to="/albums">
-                <img src="./images/albums.svg" alt=""/>
+                <ion-icon name="pulse"></ion-icon>
             </Link>
             <Link to="/playlists">
-                <img src="./images/playlists.svg" alt=""/>
+                <ion-icon name="mic"></ion-icon>
             </Link>
-            <Link to="/">
-                <img src="./images/featured.svg" alt=""/>
+            <Link to="/" className="Menu__featured">
+                <ion-icon name="radio"></ion-icon>
             </Link>
             <Link to="?dark">
-                <img src="./images/tema.svg" alt=""/>
+                <ion-icon name="contrast"></ion-icon>
             </Link>
             <Link to="/categories">
-                <img src="./images/categories.svg" alt=""/>
+                <ion-icon name="albums"></ion-icon>
             </Link>
         </nav>
     );
