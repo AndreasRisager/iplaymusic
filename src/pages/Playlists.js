@@ -13,15 +13,15 @@ export default function Playlists() {
                 <div className="playlistsHeader__content">
                     <Primarynav page="playlists" color="#FFF" />
                     <div className="playlistsHeader__contentSlider">
-                        <h2>Playlists</h2>
+                        <h1>Playlists</h1>
                         <div className="slider-container">
                             <div className="slider-images">
                                 <img src="https://via.placeholder.com/155" alt=""/>
                                 <img src="https://via.placeholder.com/155" alt=""/>
                                 <img src="https://via.placeholder.com/155" alt=""/>
                             </div>
-                            <h3 className="slider-caption">Top 50</h3>
-                            <h3 className="slider-caption">Rock Ballads</h3>
+                            <h2 className="slider-caption">Top 50</h2>
+                            <h2 className="slider-caption">Rock Ballads</h2>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ export default function Playlists() {
                 <button className="songs__more">Listen All</button>
             </section>
             </main>
-            <Menu />
+            <Menu playlists="#222" />
         </>
     )
 }

@@ -18,7 +18,7 @@ export default function Featured() {
                     <Featuredcard img="https://via.placeholder.com/325x325" heading="The Greatest Showman" label="Soundtrack"/>
                 </div>
             </main>
-            <Menu />
+            <Menu featured="#222" />
         </>
     )
 }

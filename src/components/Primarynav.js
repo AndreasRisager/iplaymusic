@@ -4,8 +4,7 @@ import { Link } from "@reach/router";
 
 export default function Primarynav({page, color, search}) {
 
-    var searchIcon = <Link to="/"><i className="fas fa-search"></i></Link>;
-
+    var searchIcon = <i className="fas fa-search"></i>;
     if (search === "false") {
         searchIcon = '';
     }
@@ -13,7 +12,7 @@ export default function Primarynav({page, color, search}) {
         <header className="Primarynav" style={{color: color}}>
             <ul>
                 <li>
-                    <Link to="/"><i className="fas fa-chevron-left"></i></Link>
+                    <i className="fas fa-chevron-left" onClick={()=> window.history.back()}></i>
                 </li>
                 <li>
                     {page}

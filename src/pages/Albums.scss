@@ -1,0 +1,74 @@
+.albums {
+    padding: 0 2rem;
+    overflow: hidden;
+}
+.albumSlider {
+    margin-bottom: 3rem;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        a {
+            text-transform: capitalize;
+            color: #FF1168;
+            font-size: 1.3rem;
+        }
+    }
+    &__albumImgCards {
+        display: flex;
+        flex-wrap: nowrap;
+        a:not(:first-child) {
+            margin-left: 1.2rem;
+        }
+        img {
+            width: 130px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+        }
+    }
+}
+
+
+.albumReleases {
+    margin: 3rem 0;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        a {
+            text-transform: capitalize;
+            color: #FF1168;
+            font-size: 1.3rem;
+        }
+    }
+
+    
+
+    &__card {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        img {
+            width: 50px;
+            border-radius: 4px;
+            margin-right: 2rem;
+        }
+        &Info {
+            margin-right: 1.5rem;
+            h2 {
+                margin-bottom: 1rem;
+            }
+        }
+        &SongAmount {
+            text-transform: capitalize;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+    }
+}

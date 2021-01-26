@@ -15,8 +15,8 @@ export default function Album() {
                     <Primarynav page="album" color="#FFF" search="false"/>
                     <div className="albumHeader__contentText">
                         <div>
-                            <h2>Old Town Road</h2>
-                            <h3>12 Songs</h3>
+                            <h1>Old Town Road</h1>
+                            <h2>12 Songs</h2>
                         </div>
                         <div>
                             <h4 className="genres">Genres hashtags</h4>
@@ -38,7 +38,7 @@ export default function Album() {
                 </div>
             </section>
         </main>
-        <Menu />
+        <Menu albums="#222" />
         </>
     )
 }
