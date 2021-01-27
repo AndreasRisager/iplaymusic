@@ -1,6 +1,5 @@
 // src/components/Primarynav.js
 import "./Primarynav.scss";
-import { Link } from "@reach/router";
 
 export default function Primarynav({page, color, search}) {
 

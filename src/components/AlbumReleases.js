@@ -1,9 +1,9 @@
 // src/components/AlbumReleases.js
 import { Link } from "@reach/router";
 
-export default function AlbumReleases({img, album, artist, amount}) {
+export default function AlbumReleases({img, album, artist, amount, id}) {
     return (
-        <Link to="/songs" className="albumReleases__card">
+        <Link to={"/album?id=" + id} className="albumReleases__card">
             <img src={img} alt=""  />
             <div className="albumReleases__cardInfo">
                 <h2>{album}</h2>

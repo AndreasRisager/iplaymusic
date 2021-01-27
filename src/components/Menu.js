@@ -12,7 +12,7 @@ export default function Menu({albums, playlists, featured, theme, categories}) {
             <Link to="/playlists">
                 <ion-icon name="mic" style={{color: playlists}}></ion-icon>
             </Link>
-            <Link to="/" className="Menu__featured">
+            <Link to="/featured" className="Menu__featured">
                 <ion-icon name="radio" style={{color: featured}}></ion-icon>
             </Link>
             <Link to="?dark">

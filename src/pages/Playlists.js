@@ -3,8 +3,26 @@ import Menu from "../components/Menu";
 import Primarynav from "../components/Primarynav";
 import Song from "../components/Song";
 import "./Playlists.scss";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import TokenContext from "../TokenContext";
 
-export default function Playlists() {
+export default function Playlists(props) {
+    var [token] = useContext(TokenContext);
+    var [content, setContent] = useState({});
+    var playlist_id = new URLSearchParams(props.location.search).get("id");
+
+    useEffect(function() {
+        axios.get(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?limit=50`, {
+            headers: {
+                "Authorization": "Bearer " + token.access_token
+            }
+        })
+        .then(response => setContent(response.data));
+    }, [token, playlist_id, setContent])
+
+    console.log(content);
+
     return (
         <>
             <main className="playlists">
@@ -27,14 +45,13 @@ export default function Playlists() {
                 </div>
             </header>
             <section className="songs">
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
+                {content.items && content.items.map(function(result) {
+                    var songLength = (result.track.duration_ms / 1000) / 60;
+
+                    return (
+                        <Song song={result.track.name} artist={result.track.artists[0].name} length={songLength.toFixed(2)} key={result.track.id} />
+                    );
+                })}
                 <button className="songs__more">Listen All</button>
             </section>
             </main>

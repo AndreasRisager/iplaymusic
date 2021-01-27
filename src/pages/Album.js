@@ -4,8 +4,24 @@ import Primarynav from "../components/Primarynav";
 import { Link } from "@reach/router";
 import Song from "../components/Song";
 import Menu from "../components/Menu";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import TokenContext from "../TokenContext";
 
-export default function Album() {
+export default function Album(props) {
+    var [token] = useContext(TokenContext);
+    var [content, setContent] = useState({});
+    var album_id = new URLSearchParams(props.location.search).get("id");
+
+    useEffect(function() {
+        axios.get(`https://api.spotify.com/v1/albums/${album_id}/tracks`, {
+            headers: {
+                "Authorization": "Bearer " + token.access_token
+            }
+        })
+        .then(response => setContent(response.data));
+    }, [token, album_id, setContent])
+
     return (
         <>
         <main className="album">
@@ -29,12 +45,11 @@ export default function Album() {
             <section className="album__songs">
                 <h3 className="album__songsHeader">All Songs</h3>
                 <div className="songs">
-                    <Song song="Old Town Road" artist="Billy Ray Cyrus" length="3 : 58"  />
-                    <Song song="don't call me up" artist="Mabel" length="2 : 46"  />
-                    <Song song="let me down slowly" artist="Alec Benjamin" length="3 : 58"  />
-                    <Song song="paradise" artist="Brazzi" length="2 : 32"  />
-                    <Song song="sucker" artist="Jonas Brothers" length="1 : 55"  />
-                    <Song song="kill this love" artist="BLACKPINK" length="2 : 43"  />
+                {content.items && content.items.map(function(result) {
+                    return (
+                        <Song song={result.name} artist={result.artists[0].name} length="3 : 58" key={result.id} />
+                    );
+                })}
                 </div>
             </section>
         </main>
