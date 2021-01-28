@@ -13,8 +13,9 @@
             align-self: flex-end;
             padding: 1rem 2rem 4rem;
             color: #FFF;
+            -ms-word-break: break-word;
+            word-break: break-word;
             h2 {
-                
                 font-size: 3.2rem;
                 line-height: 4.0rem;
                 font-weight: 600;
@@ -23,8 +24,6 @@
             p {
                 font-size: 1.2rem;
                 font-weight: 400;
-                -ms-word-break: break-word;
-                word-break: break-word;
             }
         }
         .fadedgradient {

@@ -10,7 +10,7 @@ import TokenContext from "../TokenContext";
 export default function Playlists(props) {
     var [token] = useContext(TokenContext);
     var [content, setContent] = useState({});
-    var playlist_id = new URLSearchParams(props.location.search).get("id");
+    var playlist_id = props.id;
 
     useEffect(function() {
         axios.get(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?limit=50`, {
@@ -21,13 +21,11 @@ export default function Playlists(props) {
         .then(response => setContent(response.data));
     }, [token, playlist_id, setContent])
 
-    console.log(content);
-
     return (
         <>
             <main className="playlists">
             <header className="playlistsHeader">
-                <img src="./images/slimey.png" alt=""/>
+                <img src="../images/slimey.png" alt=""/>
                 <div className="playlistsHeader__content">
                     <Primarynav page="playlists" color="#FFF" />
                     <div className="playlistsHeader__contentSlider">
@@ -49,7 +47,7 @@ export default function Playlists(props) {
                     var songLength = (result.track.duration_ms / 1000) / 60;
 
                     return (
-                        <Song song={result.track.name} artist={result.track.artists[0].name} length={songLength.toFixed(2)} key={result.track.id} />
+                        <Song song={result.track.name} artist={result.track.artists[0].name} length={songLength.toFixed(2)} id={result.track.id} key={result.track.id} />
                     );
                 })}
                 <button className="songs__more">Listen All</button>

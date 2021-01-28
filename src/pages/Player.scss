@@ -3,14 +3,19 @@
     flex-direction: column;
     text-align: center;
     figure {
+        overflow: hidden;
         margin: 5rem 0;
         display: grid;
         align-items: center;
         .record {
             margin: 0 auto;
             padding: 0 7rem;
-            animation: rotate 2s linear infinite;
             grid-area: 1/1/1/1;
+            animation: rotate 2s linear infinite;
+            animation-play-state: paused;
+        }
+        .record--playing {
+            animation-play-state: running;
         }
         .wave {
             grid-area: 1/1/1/1;
@@ -98,6 +103,11 @@
             background: linear-gradient(90deg, #EE0979 0%, #FF6A00 100%);
             border-radius: 50%;
         }
+    }
+    .player__error {
+        color: #ff3300;
+        font-size: 1rem;
+        font-weight: 800;
     }
 }
 @keyframes rotate {

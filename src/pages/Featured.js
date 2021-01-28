@@ -20,15 +20,13 @@ export default function Featured() {
         .then(response => setContent(response.data));
     }, [token, setContent])
 
-    console.log(content);
-
     return (
         <>
             <Primarynav page="featured"/>
             <main className="featured">
                 <h1 className="gradientHeading">Featured</h1>
                 <div className="featuredcards">
-                    {content.playlists && content.playlists.items.map(function(result) {
+                    {content.playlists?.items.map(function(result) {
 
                         return (
                             <Featuredcard img={result.images[0].url} heading={result.name} label={result.description.replace(/(<([^>]+)>)/ig, '')} id={result.id} key={result.id} />
