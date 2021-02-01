@@ -18,17 +18,27 @@ function App() {
     <TokenContext.Provider value={tokenState}>
     <div className="App">
       <Router>
+        {
+          (function() {
+            if (tokenState[0]?.access_token) {
+              return (
+                <>
+                  <Featured path="/featured" />
+                  <Album path="/album" />
+                  <Player path="/player" />
+                  <Player path="/player/:song" />
+                  <Playlists path="/playlists" />
+                  <Playlists path="/playlists/:id" />
+                  <Albums path="/albums" />
+                  <Categories path="/categories" />
+                  <Songs path="/songs" />
+                </>
+              )
+            }
+          }())
+        }
         <Login default />
         <Callback path="/callback" />
-        <Featured path="/featured" />
-        <Album path="/album" />
-        <Player path="/player" />
-        <Player path="/player/:song" />
-        <Playlists path="/playlists" />
-        <Playlists path="/playlists/:id" />
-        <Albums path="/albums" />
-        <Categories path="/categories" />
-        <Songs path="/songs" />
       </Router>
     </div>
     </TokenContext.Provider>

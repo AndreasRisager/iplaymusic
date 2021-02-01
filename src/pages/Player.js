@@ -19,7 +19,6 @@ export default function Player(props) {
         .then(response => setContent(response.data));
     }, [token, song_id, setContent])
 
-    console.log(content);
     var songLength = (content.duration_ms/1000) / 60;
 
     

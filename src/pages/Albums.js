@@ -47,7 +47,7 @@ export default function Albums() {
                 <div className="albumSlider__albumImgCards">
                 {playlists.playlists && playlists.playlists.items.map(function(result) {
                         return (
-                            <AlbumImgCard img={result.images[0].url} key={result.id} />
+                            <AlbumImgCard img={result.images[0].url} id={result.id} key={result.id} />
                         )
                     })}
                 </div>

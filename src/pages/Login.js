@@ -25,7 +25,7 @@ export default function Login() {
                 </form>
                 <div className="loginPage__touch">
                     <button className="loginPage__touchBtn">
-                        <img src="./images/finger-print.png" alt="finger print"/>
+                        <img src="../images/finger-print.png" alt="finger print"/>
                     </button>
                     <p>One-Touch Login</p>
                 </div>

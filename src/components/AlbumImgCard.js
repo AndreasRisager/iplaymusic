@@ -1,9 +1,9 @@
 // src/components/AlbumImgCard.js
 import { Link } from "@reach/router";
 
-export default function AlbumImgCard({img}) {
+export default function AlbumImgCard({img, id}) {
     return (
-        <Link to="/">
+        <Link to={`/playlists/${id}`}>
             <img src={img} alt=""/>
         </Link>
     )
