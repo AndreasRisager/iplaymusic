@@ -4,11 +4,16 @@
         img {
             grid-area: 1/1/1/1;
         }
+        .fadedgradient {
+            grid-area: 1/1/1/1;
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 80%);
+        }
         &__content {
             grid-area: 1/1/1/1;
             color: #FFF;
             display: flex;
             flex-direction: column;
+            
             &Text {
                 flex: 1;
                 padding: 2rem 2rem 4rem;

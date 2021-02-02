@@ -4,6 +4,7 @@ import "./Player.scss";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import TokenContext from "../TokenContext";
+import TimeCovert from "../TimeCovert";
 
 export default function Player(props) {
     var [token] = useContext(TokenContext);
@@ -18,11 +19,6 @@ export default function Player(props) {
         })
         .then(response => setContent(response.data));
     }, [token, song_id, setContent])
-
-    var songLength = (content.duration_ms/1000) / 60;
-
-    
-    
     
     function playAudio() {
         var audio = document.querySelector("audio");
@@ -62,7 +58,7 @@ export default function Player(props) {
                     <audio src={content.preview_url} type="audio/mp3"/>
                     <div className="timer__time">
                         <p>0:00</p>
-                        <p>{songLength.toFixed(2)}</p>
+                        <p>{TimeCovert(content.duration_ms)}</p>
                     </div>
                 </form>
                 <p className="player__error"></p>

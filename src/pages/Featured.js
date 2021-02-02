@@ -27,7 +27,6 @@ export default function Featured() {
                 <h1 className="gradientHeading">Featured</h1>
                 <div className="featuredcards">
                     {content.playlists?.items.map(function(result) {
-
                         return (
                             <Featuredcard img={result.images[0].url} heading={result.name} label={result.description.replace(/(<([^>]+)>)/ig, '')} id={result.id} key={result.id} />
                         );

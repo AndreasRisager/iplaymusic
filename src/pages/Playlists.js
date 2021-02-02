@@ -7,6 +7,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import TokenContext from "../TokenContext";
 import { Link } from "@reach/router";
+import TimeCovert from "../TimeCovert";
 
 export default function Playlists(props) {
     var [token] = useContext(TokenContext);
@@ -31,12 +32,11 @@ export default function Playlists(props) {
         }
     }, [token, props.id, setPlaylist, setPlaylists])
 
-    function msToMinutesAndSeconds(ms) {
-        var minutes = Math.floor(ms / 60000);
-        var seconds = ((ms % 60000) / 1000).toFixed(0);
-        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    const isActive = ({ isCurrent }) => {
+        return isCurrent ? { className: "slider--active" } : {}
     }
 
+    console.log(playlists);
     return (
         <>
             <main className="playlists">
@@ -49,9 +49,6 @@ export default function Playlists(props) {
                         <div className="slider-container">
                             <div className="slider-images">
                             {playlists.map(function(result, index) {
-                                const isActive = ({ isCurrent }) => {
-                                    return isCurrent ? { className: "slider--active" } : {}
-                                }
                                 return (
                                     <Link getProps={isActive} to={`/playlists/${result.id}`} key={result.id}>
                                         <img src={result.images[0].url} alt={result.name} data-index={index} onClick={(e) => document.querySelector(".slider-caption").innerText = playlists[e.target.getAttribute("data-index")].name}/>
@@ -68,10 +65,9 @@ export default function Playlists(props) {
                 {playlist.items && playlist.items.map(function(result) {
                     return (
                         (function() {
-                            
                             if (result.track !== null) {
                                 return (
-                                    <Song song={result.track?.name} artist={result.track?.artists[0].name} length={msToMinutesAndSeconds(result.track?.duration_ms)} key={result.track?.id} />
+                                    <Song song={result.track?.name} artist={result.track?.artists[0].name} length={TimeCovert(result.track?.duration_ms)} id={result.track?.id} key={result.track?.id} />
                                 );
                             }
                         }())

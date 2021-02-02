@@ -7,37 +7,52 @@ import Menu from "../components/Menu";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import TokenContext from "../TokenContext";
+import TimeCovert from "../TimeCovert";
 
 export default function Album(props) {
     var [token] = useContext(TokenContext);
     var [content, setContent] = useState({});
-    var album_id = new URLSearchParams(props.location.search).get("id");
 
     useEffect(function() {
-        axios.get(`https://api.spotify.com/v1/albums/${album_id}/tracks`, {
+        axios.get(`https://api.spotify.com/v1/albums/${props.id}`, {
             headers: {
                 "Authorization": "Bearer " + token.access_token
             }
         })
         .then(response => setContent(response.data));
-    }, [token, album_id, setContent])
+    }, [token, props.id, setContent])
 
+    var songs = "Songs";
+    if(content.total_tracks === 1) {
+        songs = "Song";
+    }
+    console.log(content);
     return (
         <>
         <main className="album">
             <header className="albumHeader">
-                <img src="./images/old-town-road.jpg" alt=""/>
+                <img src={content.images && content.images[0].url} alt=""/>
+                <div className="fadedgradient"></div>
                 <div className="albumHeader__content">
-                    <Primarynav page="album" color="#FFF" search="false"/>
+                    <Primarynav page={content.album_type} color="#FFF" search="false"/>
                     <div className="albumHeader__contentText">
                         <div>
-                            <h1>Old Town Road</h1>
-                            <h2>12 Songs</h2>
+                            <h1>{content.name}</h1>
+                            <h2>{content.total_tracks + " " + songs}</h2>
                         </div>
                         <div>
-                            <h4 className="genres">Genres hashtags</h4>
-                            <Link to="/search?country" className="hashtag">#country</Link>
-                            <Link to="/search?country+road" className="hashtag">#country road</Link>
+                            {content.genres?.map(function(result) {
+                                return (
+                                    (function() {
+                                        if (result.length !== 0) {
+                                            <h4 className="genres">Genres hashtags</h4>
+                                            return (
+                                                <Link to="/search?country" className="hashtag">#country</Link>
+                                            );
+                                        }
+                                    }())
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
@@ -45,9 +60,9 @@ export default function Album(props) {
             <section className="album__songs">
                 <h3 className="album__songsHeader">All Songs</h3>
                 <div className="songs">
-                {content.items && content.items.map(function(result) {
+                {content.tracks?.items.map(function(result) {
                     return (
-                        <Song song={result.name} artist={result.artists[0].name} length="3 : 58" key={result.id} />
+                        <Song song={result.name} artist={result.artists[0].name} length={TimeCovert(result.duration_ms)} id={result.id} key={result.id} />
                     );
                 })}
                 </div>
