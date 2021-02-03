@@ -1,14 +1,15 @@
+import { Link } from "@reach/router";
+
 // src/components/CategoryItem.js
-export default function CategoryItem({children, genre, color}) {
+export default function CategoryItem({genre, id}) {
     return (
-        <div className="category">
-            <button className="category__name" style={{backgroundColor: color}}>
-                <h2>{genre}</h2>
-                <ion-icon name="ellipsis-horizontal"></ion-icon>
-            </button>
-            <div className="category__list">
-                {children}
-            </div>
-        </div>
+        <>
+            <Link to={"/categories/" + id}>
+                <div className="category__name">
+                    <h2>{genre}</h2>
+                    <ion-icon name="ellipsis-horizontal"></ion-icon>
+                </div>
+            </Link>
+        </>
     )
 }

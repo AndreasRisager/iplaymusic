@@ -1,35 +1,34 @@
 .categories {
     padding: 0 2rem 5rem;
     .category {
-        display: flex;
-        flex-direction: column;
+        padding: 2rem;
         &__name {
-            cursor: pointer;
-            border: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            background-color: #000000;
-            color: #FFF;
-            border-radius: 8px;
-            padding: 1.2rem 2rem;
-            font-size: 1rem;
             ion-icon {
-                font-size: 3rem;
+                font-size: 2rem;
             }
         }
-        &__list {
-            margin: 1rem 2rem;
-            &Item {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 1.5rem;
-                font-weight: 300;
-                padding: 0.77rem 0;
-                text-transform: capitalize;
-            }
+        &__subItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+    }
+    .category:nth-of-type(5n+1) {
+        background-color: lawngreen;
+    }
+    .category:nth-of-type(5n+2) {
+        background-color: rgb(252, 59, 0);
+    }
+    .category:nth-of-type(5n+3) {
+        background-color: rgb(17, 0, 252);
+    }
+    .category:nth-of-type(5n+4) {
+        background-color: rgb(252, 0, 231);
+    }
+    .category:nth-of-type(5n+5) {
+        background-color: rgb(252, 206, 0);
     }
 }

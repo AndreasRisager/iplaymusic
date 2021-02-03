@@ -32,6 +32,7 @@ function App() {
                   <Playlists path="/playlists/:id" />
                   <Albums path="/albums" />
                   <Categories path="/categories" />
+                  <Categories path="/categories/:id" />
                   <Songs path="/songs" />
                 </>
               )

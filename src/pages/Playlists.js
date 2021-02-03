@@ -36,7 +36,8 @@ export default function Playlists(props) {
         return isCurrent ? { className: "slider--active" } : {}
     }
 
-    console.log(playlists);
+    console.log(playlist);
+
     return (
         <>
             <main className="playlists">
