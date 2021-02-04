@@ -36,7 +36,9 @@ export default function Playlists(props) {
         return isCurrent ? { className: "slider--active" } : {}
     }
 
-    console.log(playlist);
+    if (document.querySelector(".slider--active")) {
+        document.querySelector(".slider-caption").innerText = document.querySelector(".slider--active img").getAttribute("alt")
+    }
 
     return (
         <>
@@ -49,10 +51,10 @@ export default function Playlists(props) {
                         <h1>Playlists</h1>
                         <div className="slider-container">
                             <div className="slider-images">
-                            {playlists.map(function(result, index) {
+                            {playlists.map(function(result) {
                                 return (
                                     <Link getProps={isActive} to={`/playlists/${result.id}`} key={result.id}>
-                                        <img src={result.images[0].url} alt={result.name} data-index={index} onClick={(e) => document.querySelector(".slider-caption").innerText = playlists[e.target.getAttribute("data-index")].name}/>
+                                        <img src={result.images[0].url} alt={result.name} />
                                     </Link>
                                 );
                             })}

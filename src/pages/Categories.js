@@ -37,10 +37,10 @@ export default function Categories(props) {
             <h1 className="gradientHeading">Categories</h1>
             <div className="categoryItems">
                 {category.items?.map(function(result) {
+                    console.log(result.id);
                     return (
                         <>
                             <CategoryItem genre={result.name} id={result.id} key={result.id} />
-                            <div className={result.id}></div>
                         </>
                     );
                 })}

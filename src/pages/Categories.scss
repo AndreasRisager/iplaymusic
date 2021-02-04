@@ -1,34 +1,46 @@
 .categories {
     padding: 0 2rem 5rem;
     .category {
-        padding: 2rem;
-        &__name {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            ion-icon {
-                font-size: 2rem;
-            }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.2rem;
+        ion-icon {
+            font-size: 2rem;
         }
         &__subItem {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-    }
-    .category:nth-of-type(5n+1) {
-        background-color: lawngreen;
-    }
-    .category:nth-of-type(5n+2) {
-        background-color: rgb(252, 59, 0);
-    }
-    .category:nth-of-type(5n+3) {
-        background-color: rgb(17, 0, 252);
-    }
-    .category:nth-of-type(5n+4) {
-        background-color: rgb(252, 0, 231);
-    }
-    .category:nth-of-type(5n+5) {
-        background-color: rgb(252, 206, 0);
+        &:nth-of-type(9n+1) {
+            background-color: #D70060;
+        }
+        &:nth-of-type(9n+2) {
+            background-color: #E54028;
+        }
+        &:nth-of-type(9n+3) {
+            background-color: #F18D05;
+        }
+        &:nth-of-type(9n+4) {
+            background-color: #F2BC06;
+        }
+        &:nth-of-type(9n+5) {
+            background-color: #5EB11C;
+        }
+        &:nth-of-type(9n+6) {
+            background-color: #3A7634;
+        }
+        &:nth-of-type(9n+7) {
+            background-color: #0ABEBE;
+        }
+        &:nth-of-type(9n+8) {
+            background-color: #00A1CB;
+        }
+        &:nth-of-type(9n+9) {
+            background-color: #115793;
+        }
     }
 }
