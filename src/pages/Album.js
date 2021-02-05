@@ -26,7 +26,7 @@ export default function Album(props) {
     if(content.total_tracks === 1) {
         songs = "Song";
     }
-    console.log(content);
+    
     return (
         <>
         <main className="album">
@@ -36,24 +36,8 @@ export default function Album(props) {
                 <div className="albumHeader__content">
                     <Primarynav page={content.album_type} color="#FFF" search="false"/>
                     <div className="albumHeader__contentText">
-                        <div>
-                            <h1>{content.name}</h1>
-                            <h2>{content.total_tracks + " " + songs}</h2>
-                        </div>
-                        <div>
-                            {content.genres?.map(function(result) {
-                                return (
-                                    (function() {
-                                        if (result.length !== 0) {
-                                            <h4 className="genres">Genres hashtags</h4>
-                                            return (
-                                                <Link to="/search?country" className="hashtag">#country</Link>
-                                            );
-                                        }
-                                    }())
-                                )
-                            })}
-                        </div>
+                        <h1>{content.name}</h1>
+                        <h2>{content.total_tracks + " " + songs}</h2>
                     </div>
                 </div>
             </header>

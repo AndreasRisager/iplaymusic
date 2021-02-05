@@ -15,7 +15,7 @@ exports.handler = async function(event, context) {
         headers: {
             "Authorization": "Basic " + (Buffer.from(process.env.CLIENT_ID + ":" + process.env.CLIENT_SECRET).toString("base64"))
         },
-        josn: true
+        json: true
     }
 
     try {

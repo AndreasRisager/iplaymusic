@@ -29,7 +29,7 @@ export default function Player(props) {
             document.querySelector(".player__error").innerHTML = "There's no audio preview for this song.";
         }
         
-        audio.volume = 0.01;
+        audio.volume = 0.1;
 
         if (audio.paused && audio.src) {
             audio.play();

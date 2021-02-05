@@ -36,23 +36,20 @@ export default function Categories(props) {
         <main className="categories">
             <h1 className="gradientHeading">Categories</h1>
             <div className="categoryItems">
+                {content.items?.map(function(result) {
+                    if (props.id) {
+                        return (
+                            <CategorySubItem id={result.id} key={result.id}>{result.name}</CategorySubItem>
+                        );
+                    }
+                })}
                 {category.items?.map(function(result) {
-                    console.log(result.id);
                     return (
                         <>
                             <CategoryItem genre={result.name} id={result.id} key={result.id} />
                         </>
                     );
                 })}
-                <div className={props.id + "__result"}>
-                    {content.items?.map(function(result) {
-                        if (props.id) {
-                            return (
-                                <CategorySubItem id={result.id} key={result.id}>{result.name}</CategorySubItem>
-                            );
-                        }
-                    })}
-                </div>
             </div>
         </main>
         <Menu categories="#000000"/>
