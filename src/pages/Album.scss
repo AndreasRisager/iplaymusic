@@ -1,54 +1,54 @@
 .album {
-    &Header {
-        display: grid;
-        img {
-            grid-area: 1/1/1/1;
-        }
-        .fadedgradient {
-            grid-area: 1/1/1/1;
-            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
-        }
-        &__content {
-            grid-area: 1/1/1/1;
-            color: #FFF;
-            display: flex;
-            flex-direction: column;
-            
-            &Text {
-                flex: 1;
-                padding: 2rem 2rem 4rem;
-                display: flex;
-                flex-direction: column;
-            }
-            h1 {
-                font-size: 3.1rem;
-                padding-bottom: 1rem;
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-        }
-    }
-    .genres {
-        h4 {
-            margin-bottom: 2rem;
-        }
-        .hashtag {
-            background-color: #FF1168;
-            padding: 1rem 1.5rem;
-            margin-right: 1em;
-            border-radius: 50px;
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-    }
-    
-    &__songs {
-        padding: 2rem;
-        &Header {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #341931;
-        }
-    }
+	&Header {
+		display: grid;
+		img {
+			grid-area: 1/1/1/1;
+		}
+		.fadedgradient {
+			grid-area: 1/1/1/1;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+		}
+		&__content {
+			grid-area: 1/1/1/1;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+
+			&Text {
+				flex: 1;
+				padding: 2rem 2rem 4rem;
+				display: flex;
+				flex-direction: column;
+			}
+			h1 {
+				font-size: 3.1rem;
+				padding-bottom: 1rem;
+			}
+			h2 {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	.genres {
+		h4 {
+			margin-bottom: 2rem;
+		}
+		.hashtag {
+			background-color: #ff1168;
+			padding: 1rem 1.5rem;
+			margin-right: 1em;
+			border-radius: 50px;
+			font-size: 1.5rem;
+			font-weight: 500;
+		}
+	}
+
+	&__songs {
+		padding: 2rem;
+		&Header {
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: #341931;
+		}
+	}
 }

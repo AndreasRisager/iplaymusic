@@ -1,51 +1,51 @@
 .categories {
-    padding: 0 2rem 5rem;
-    .category {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.5rem;
-        border-radius: 8px;
-        margin-bottom: 1.2rem;
-        color: #FFF;
-        ion-icon {
-            font-size: 2rem;
-        }
-        &__subItem {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin: 1rem 1.5rem;
-            color: #341931;
-        }
-        &:nth-of-type(9n+1) {
-            background-color: #D70060;
-        }
-        &:nth-of-type(9n+2) {
-            background-color: #E54028;
-        }
-        &:nth-of-type(9n+3) {
-            background-color: #F18D05;
-        }
-        &:nth-of-type(9n+4) {
-            background-color: #F2BC06;
-        }
-        &:nth-of-type(9n+5) {
-            background-color: #5EB11C;
-        }
-        &:nth-of-type(9n+6) {
-            background-color: #3A7634;
-        }
-        &:nth-of-type(9n+7) {
-            background-color: #0ABEBE;
-        }
-        &:nth-of-type(9n+8) {
-            background-color: #00A1CB;
-        }
-        &:nth-of-type(9n+9) {
-            background-color: #115793;
-        }
-    }
+	padding: 0 2rem 5rem;
+	.category {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1.5rem;
+		border-radius: 8px;
+		margin-bottom: 1.2rem;
+		color: #fff;
+		ion-icon {
+			font-size: 2rem;
+		}
+		&__subItem {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 1.5rem;
+			font-weight: 300;
+			margin: 1rem 1.5rem;
+			color: #341931;
+		}
+		&:nth-of-type(9n + 1) {
+			background-color: #d70060;
+		}
+		&:nth-of-type(9n + 2) {
+			background-color: #e54028;
+		}
+		&:nth-of-type(9n + 3) {
+			background-color: #f18d05;
+		}
+		&:nth-of-type(9n + 4) {
+			background-color: #f2bc06;
+		}
+		&:nth-of-type(9n + 5) {
+			background-color: #5eb11c;
+		}
+		&:nth-of-type(9n + 6) {
+			background-color: #3a7634;
+		}
+		&:nth-of-type(9n + 7) {
+			background-color: #0abebe;
+		}
+		&:nth-of-type(9n + 8) {
+			background-color: #00a1cb;
+		}
+		&:nth-of-type(9n + 9) {
+			background-color: #115793;
+		}
+	}
 }

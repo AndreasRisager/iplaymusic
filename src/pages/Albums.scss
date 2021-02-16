@@ -1,86 +1,83 @@
 .albums {
-    h1 {
-        padding: 0 2rem 2rem;
-    }
+	h1 {
+		padding: 0 2rem 2rem;
+	}
 }
 .albumSlider {
-    margin-bottom: 3rem;
-    &__header {
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1rem;
-        a {
-            text-transform: capitalize;
-            color: #FF1168;
-            font-size: 1.3rem;
-        }
-    }
-    &__albumImgCards {
-        padding: 2rem;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        a:not(:first-child) {
-            margin-left: 1.2rem;
-        }
-        a:last-child {
-            padding-right: 2rem;
-        }
-        img {
-            width: 130px;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
-        }
-    }
+	margin-bottom: 3rem;
+	&__header {
+		padding: 0 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1rem;
+		a {
+			text-transform: capitalize;
+			color: #ff1168;
+			font-size: 1.3rem;
+		}
+	}
+	&__albumImgCards {
+		padding: 2rem;
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+		a:not(:first-child) {
+			margin-left: 1.2rem;
+		}
+		a:last-child {
+			padding-right: 2rem;
+		}
+		img {
+			width: 130px;
+			border-radius: 8px;
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+		}
+	}
 }
 
-
 .albumReleases {
-    padding: 0 2rem;
-    margin: 3rem 0;
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1rem;
-        margin-bottom: 2rem;
-        a {
-            text-transform: capitalize;
-            color: #FF1168;
-            font-size: 1.3rem;
-        }
-    }
+	padding: 0 2rem;
+	margin: 3rem 0;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1rem;
+		margin-bottom: 2rem;
+		a {
+			text-transform: capitalize;
+			color: #ff1168;
+			font-size: 1.3rem;
+		}
+	}
 
-    
-
-    &__card {
-        display: flex;
-        align-items: center;
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-        img {
-            width: 50px;
-            border-radius: 4px;
-            margin-right: 2rem;
-        }
-        &Info {
-            margin-right: 1.5rem;
-            h2 {
-                margin-bottom: 1rem;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2; /* number of lines to show */
-                -webkit-box-orient: vertical;
-            }
-        }
-        &SongAmount {
-            text-transform: capitalize;
-            margin-left: auto;
-            white-space: nowrap;
-        }
-    }
+	&__card {
+		display: flex;
+		align-items: center;
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+		img {
+			width: 50px;
+			border-radius: 4px;
+			margin-right: 2rem;
+		}
+		&Info {
+			margin-right: 1.5rem;
+			h2 {
+				margin-bottom: 1rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2; /* number of lines to show */
+				-webkit-box-orient: vertical;
+			}
+		}
+		&SongAmount {
+			text-transform: capitalize;
+			margin-left: auto;
+			white-space: nowrap;
+		}
+	}
 }

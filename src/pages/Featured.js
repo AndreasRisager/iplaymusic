@@ -8,32 +8,42 @@ import Featuredcard from "../components/Featuredcard";
 import Menu from "../components/Menu";
 
 export default function Featured() {
-    var [token] = useContext(TokenContext);
-    var [content, setContent] = useState({});
+	var [token] = useContext(TokenContext);
+	var [content, setContent] = useState({});
 
-    useEffect(function() {
-        axios.get("https://api.spotify.com/v1/browse/featured-playlists", {
-            headers: {
-                "Authorization": "Bearer " + token.access_token
-            }
-        })
-        .then(response => setContent(response.data));
-    }, [token, setContent])
+	useEffect(
+		function () {
+			axios
+				.get("https://api.spotify.com/v1/browse/featured-playlists", {
+					headers: {
+						Authorization: "Bearer " + token.access_token,
+					},
+				})
+				.then(response => setContent(response.data));
+		},
+		[token, setContent]
+	);
 
-    return (
-        <>
-            <Primarynav page="featured"/>
-            <main className="featured">
-                <h1 className="gradientHeading">Featured</h1>
-                <div className="featuredcards">
-                    {content.playlists?.items.map(function(result) {
-                        return (
-                            <Featuredcard img={result.images[0].url} heading={result.name} label={result.description.replace(/(<([^>]+)>)/ig, '')} id={result.id} key={result.id} />
-                        );
-                    })}
-                </div>
-            </main>
-            <Menu featured="#222" />
-        </>
-    )
+	return (
+		<>
+			<Primarynav page="featured" />
+			<main className="featured">
+				<h1 className="gradientHeading">Featured</h1>
+				<div className="featuredcards">
+					{content.playlists?.items.map(function (result) {
+						return (
+							<Featuredcard
+								img={result.images[0].url}
+								heading={result.name}
+								label={result.description.replace(/(<([^>]+)>)/gi, "")}
+								id={result.id}
+								key={result.id}
+							/>
+						);
+					})}
+				</div>
+			</main>
+			<Menu featured="#222" />
+		</>
+	);
 }

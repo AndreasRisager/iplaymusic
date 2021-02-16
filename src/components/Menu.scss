@@ -1,22 +1,22 @@
 .Menu {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 0.6rem 0;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    max-width: 375px;
-    ion-icon {
-        font-size: 2.5rem;
-        color: #ff2600;
-    }
-    &__featured ion-icon{
-        background: linear-gradient( 90deg, #EE0979 0%, #FF6A00 100%);
-        padding: 1rem;
-        border-radius: 50%;
-        color: #FFF;
-    }
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 0.6rem 0;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	max-width: 375px;
+	ion-icon {
+		font-size: 2.5rem;
+		color: #ff2600;
+	}
+	&__featured ion-icon {
+		background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+		padding: 1rem;
+		border-radius: 50%;
+		color: #fff;
+	}
 }

@@ -1,46 +1,46 @@
 .song {
-    display: flex;
-    align-items: center;
-    margin: 2rem 0;
-    &__playbutton {
-        color: #FFF;
-        border-radius: 50%;
-        border: none;
-        background: rgb(238,9,121);
-        background: linear-gradient(90deg, #EE0979 0%, #FF6A00 100%);
-        padding: 1.3rem 1.367rem;
-        display: flex;
-        margin-right: 2rem;
-        cursor: pointer;
-    }
-    &__info {
-        display: flex;
-        flex-direction: column;
-        margin-right: 2rem;
-        &Name {
-            text-transform: capitalize;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #341931;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* number of lines to show */
-            -webkit-box-orient: vertical;
-        }
-        &Artist {
-            text-transform: capitalize;
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #341931;
-            padding-top: 0.5rem;
-        }
-    }
-    &__length {
-        margin-left: auto;
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: #341931;
-        white-space: nowrap;
-    }
+	display: flex;
+	align-items: center;
+	margin: 2rem 0;
+	&__playbutton {
+		color: #fff;
+		border-radius: 50%;
+		border: none;
+		background: rgb(238, 9, 121);
+		background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+		padding: 1.3rem 1.367rem;
+		display: flex;
+		margin-right: 2rem;
+		cursor: pointer;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		margin-right: 2rem;
+		&Name {
+			text-transform: capitalize;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #341931;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2; /* number of lines to show */
+			-webkit-box-orient: vertical;
+		}
+		&Artist {
+			text-transform: capitalize;
+			font-size: 1.2rem;
+			font-weight: 300;
+			color: #341931;
+			padding-top: 0.5rem;
+		}
+	}
+	&__length {
+		margin-left: auto;
+		font-size: 1.2rem;
+		font-weight: 300;
+		color: #341931;
+		white-space: nowrap;
+	}
 }
