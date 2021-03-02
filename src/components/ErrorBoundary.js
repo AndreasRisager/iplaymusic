@@ -1,48 +1,38 @@
+import axios from "axios";
 import { Component } from "react";
-import { Link, Redirect } from "@reach/router";
 
-class ErrorBoundary extends Component {
-	constructor(props) {
-		super(props);
+export default class ErrorBoundary extends Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         hasError: false
+      };
+   }
 
-		this.state = {
-			hasError: false,
-			redirect: false,
-		};
-	}
+   static getDerivedStateFromError(error) {
+      return { hasError: true }
+   }
 
-	static getDerivedStateFromError() {
-		return { hasError: true };
-	}
+   componentDidCatch(error, errorInfo) {
+      axios.post("/.netlify/functions/error-logging", {
+         body: {
+            error,
+            errorInfo
+         }
+      })
+      .then(response => console.log(response));
+   }
 
-	componentDidCatch(error, info) {
-		console.error("ErrorBoundary caught an error", error, info);
-	}
+   render() {
+      if (this.state.hasError) {
+         return (
+            <>
+            <h1>Oops, something went wrong!</h1>
+            <p>{this.props.message}</p>
+            </>
+         )
+      }
 
-	componentDidUpdate() {
-		if (this.state.hasError) {
-			setTimeout(() => this.setState({ redirect: true }), 5000);
-		}
-	}
-
-	render() {
-		if (this.state.redirect) {
-			return <Redirect to="/" />;
-		}
-		if (this.state.hasError) {
-			return (
-				<>
-					<h1>Oops, there was an error</h1>
-					<p>Something went wrong, please try again later.</p>
-					<p>
-						<Link to="/">Click here</Link> or wait 5 seconds to be redirected.
-					</p>
-				</>
-			);
-		}
-
-		return this.props.children;
-	}
+      return this.props.children;
+   }
 }
-
-export default ErrorBoundary;

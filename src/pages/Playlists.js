@@ -8,6 +8,8 @@ import { useContext, useEffect, useState } from "react";
 import TokenContext from "../TokenContext";
 import { Link } from "@reach/router";
 import TimeCovert from "../TimeCovert";
+import ErrorBoundary from "../components/ErrorBoundary";
+import * as Sentry from "@sentry/react";
 
 export default function Playlists(props) {
 	var [token] = useContext(TokenContext);
@@ -71,26 +73,28 @@ export default function Playlists(props) {
 						</div>
 					</div>
 				</header>
-				<section className="songs">
-					{playlist.items &&
-						playlist.items.map(function (result) {
-							return (function () {
-								if (result.track !== null) {
-									return (
-										<Song
-											song={result.track?.name}
-											artist={result.track?.artists[0].name}
-											length={TimeCovert(result.track?.duration_ms)}
-											id={result.track?.id}
-											key={result.track?.id}
-										/>
-									);
-								}
-							})();
-						})}
+				<Sentry.ErrorBoundary message="The playlist can't be generated right now, try again later.">
+					<section className="songs">
+						{playlist.items &&
+							playlist.items.map(function (result) {
+								return (function () {
+									if (result.track !== null) {
+										return (
+											<Song
+												song={result.track?.name}
+												artist={result.track?.artists[0].name}
+												length={TimeCovert(result.track?.duration_ms)}
+												id={result.track?.id}
+												key={result.track?.id}
+											/>
+										);
+									}
+								})();
+							})}
 
-					<button className="songs__more">Listen All</button>
-				</section>
+						<button className="songs__more">Listen All</button>
+					</section>
+				</Sentry.ErrorBoundary>
 			</main>
 			<Menu playlists="#222" />
 		</>
