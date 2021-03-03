@@ -59,7 +59,6 @@ export default function Albums() {
 							})}
 					</div>
 				</div>
-
 				<div className="albumReleases">
 					<div className="albumReleases__header">
 						<h2>New Releases</h2>
