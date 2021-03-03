@@ -8,7 +8,6 @@ import { useContext, useEffect, useState } from "react";
 import TokenContext from "../TokenContext";
 import { Link } from "@reach/router";
 import TimeCovert from "../TimeCovert";
-import ErrorBoundary from "../components/ErrorBoundary";
 import * as Sentry from "@sentry/react";
 
 export default function Playlists(props) {
