@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
 		method: "post",
 		params: {
 			code: body.code,
-			redirect_uri: window.location.href.includes("iplaymusic") ? "https://iplaymusic-andreasrisager.netlify.app/callback" : "http://localhost:8888/callback",
+			redirect_uri: process.env.REDIRECT_URI,
 			grant_type: "authorization_code",
 		},
 		headers: {

@@ -8,7 +8,7 @@ export default function Login() {
 		response_type: "code",
 		client_id: "c153db9d84c8431887a6bb2ac07b25a1",
 		scope: "user-read-private user-read-email",
-		redirect_uri: window.location.href.includes("iplaymusic") ? "https://iplaymusic-andreasrisager.netlify.app/callback" : "http://localhost:8888/callback",
+		redirect_uri: process.env.REDIRECT_URI,
 		state: "shu398f3890ujasnd3shf3sf47892s998sfsjhb83xfn982df98sud63uasjnh3ehfisa7",
 	});
 	return (
