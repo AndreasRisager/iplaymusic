@@ -4,8 +4,7 @@ import TokenContext from "../TokenContext";
 import { navigate } from "@reach/router";
 
 export default function Callback(props) {
-	var tokenState = useContext(TokenContext);
-   var setToken = tokenState[1];
+	var setToken = useContext(TokenContext)[1];
 
 	var code = new URLSearchParams(props.location.search).get("code");
 
