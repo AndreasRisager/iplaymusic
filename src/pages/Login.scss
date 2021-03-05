@@ -1,51 +1,26 @@
 .loginPage {
 	padding: 1.5rem;
+	text-align: center;
 	&__heading {
 		font-size: 3.6rem;
 		margin-bottom: 6rem;
 		font-weight: 600;
 	}
-	&__form {
-		display: flex;
-		flex-direction: column;
-		label {
-			font-size: 1.5rem;
-			font-weight: 600;
-			margin: 20px 5px;
-		}
-		input {
-			border: none;
-			border-bottom: 3px solid #000;
-			border-radius: 0;
-			font-size: 1.5rem;
-			padding-bottom: 10px;
-		}
-		a {
-			padding: 1.6rem;
-			border-radius: 50px;
-			border: 3px solid #000;
-			text-transform: uppercase;
-			font-size: 1.5rem;
-			margin: 4rem 0;
-			font-weight: 600;
-			text-align: center;
-		}
-	}
-	&__touch {
-		display: flex;
-		flex-direction: column;
+	a {
+		display: inline-flex;
 		align-items: center;
-		&Btn {
-			padding: 2rem;
-			border-radius: 50%;
-			border: none;
-			background-color: #ff1168;
-			display: flex;
-		}
-		p {
-			font-size: 1.5rem;
-			padding: 15px 0;
-			font-weight: 300;
+		justify-content: center;
+		border-radius: 50px;
+		border: 3px solid #191414;
+		color: #191414;
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		padding: 0.5rem;
+		font-weight: 600;
+		i {
+			color: #1DB954;
+			font-size: 4rem;
+			margin-right: 2rem;
 		}
 	}
 }
