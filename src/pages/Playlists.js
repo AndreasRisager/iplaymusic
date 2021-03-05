@@ -95,7 +95,7 @@ export default function Playlists(props) {
 					</section>
 				{/* </Sentry.ErrorBoundary> */}
 			</main>
-			<Menu playlists="#222" />
+			<Menu />
 		</>
 	);
 }

@@ -43,7 +43,7 @@ export default function Featured() {
 					})}
 				</div>
 			</main>
-			<Menu featured="#222" />
+			<Menu />
 		</>
 	);
 }

@@ -22,3 +22,32 @@ a {
 	text-decoration: none;
 	color: unset;
 }
+html#document[data-theme="dark"] {
+	color: #e9e9e9;
+	background-color: #1E1E1E;
+	.loginPage a {
+		border: 3px solid #e9e9e9;
+		color: #e9e9e9;
+	}
+	h2.slider-caption {
+		color: #e9e9e9;
+	}
+	.song {
+		&__infoName {
+			color: #e9e9e9;
+		}
+		&__infoArtist {
+			color: #e9e9e9;
+		}
+		&__length {
+			color: #e9e9e9;
+		}
+	}
+	.Menu {
+		background-color: #303030;
+		box-shadow: 0 -5px 25px #52515133;
+	}
+	.category__subItem {
+		color: #e9e9e9;
+	}
+}

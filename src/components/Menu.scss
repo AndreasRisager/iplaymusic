@@ -19,4 +19,16 @@
 		border-radius: 50%;
 		color: #fff;
 	}
+	label {
+		position: relative;
+		input{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+    		transform: translate(-50%, -60%);
+			z-index: 3;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
 }

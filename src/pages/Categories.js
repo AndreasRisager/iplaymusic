@@ -35,6 +35,8 @@ export default function Categories(props) {
 		[token, props.id, setCategory, setContent]
 	);
 
+	console.log(content);
+
 	return (
 		<>
 			<Primarynav page="categories" />
@@ -61,7 +63,7 @@ export default function Categories(props) {
 					})}
 				</div>
 			</main>
-			<Menu categories="#000000" />
+			<Menu />
 		</>
 	);
 }

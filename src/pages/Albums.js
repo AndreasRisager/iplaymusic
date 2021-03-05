@@ -81,7 +81,7 @@ export default function Albums() {
 					</div>
 				</div>
 			</main>
-			<Menu albums="#222" />
+			<Menu />
 		</>
 	);
 }

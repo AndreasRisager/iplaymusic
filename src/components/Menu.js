@@ -2,23 +2,39 @@
 import { Link } from "@reach/router";
 import "./Menu.scss";
 
-export default function Menu({ albums, playlists, featured, theme, categories }) {
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+	document.documentElement.setAttribute('data-theme', currentTheme);
+}
+function switchTheme(theme) {
+	if (theme) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+		localStorage.setItem('theme', 'dark');
+	}
+	else {
+		document.documentElement.removeAttribute('data-theme');
+		localStorage.removeItem('theme');
+	}
+}
+
+export default function Menu() {
 	return (
 		<nav className="Menu">
 			<Link to="/albums">
-				<ion-icon name="pulse" style={{ color: albums }}></ion-icon>
+				<ion-icon name="pulse"></ion-icon>
 			</Link>
 			<Link to="/playlists">
-				<ion-icon name="mic" style={{ color: playlists }}></ion-icon>
+				<ion-icon name="mic"></ion-icon>
 			</Link>
 			<Link to="/featured" className="Menu__featured">
-				<ion-icon name="radio" style={{ color: featured }}></ion-icon>
+				<ion-icon name="radio"></ion-icon>
 			</Link>
-			<Link to="?dark">
-				<ion-icon name="contrast" style={{ color: theme }}></ion-icon>
-			</Link>
+			<label className="theme-switch" htmlFor="theme">
+				<input type="checkbox" id="theme" onChange={e => switchTheme(e.target.checked ? "dark" : "")} defaultChecked={currentTheme === "dark" ? true : false} />
+				<ion-icon name="contrast"></ion-icon>
+			</label>
 			<Link to="/categories">
-				<ion-icon name="albums" style={{ color: categories }}></ion-icon>
+				<ion-icon name="albums"></ion-icon>
 			</Link>
 		</nav>
 	);
