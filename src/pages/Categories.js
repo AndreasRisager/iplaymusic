@@ -33,9 +33,7 @@ export default function Categories(props) {
 			}
 		},
 		[token, props.id, setCategory, setContent]
-	);
-
-	console.log(content);
+	)
 
 	return (
 		<>
